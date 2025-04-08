@@ -1,0 +1,283 @@
+/* Base Styles */
+.quiz-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Section Cards */
+.section-cards-container {
+  text-align: center;
+}
+
+.section-header {
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.section-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.section-card {
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.section-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.section-title {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.section-description {
+  color: #7f8c8d;
+}
+
+.geography {
+  background-color: #e3f2fd;
+  border: 2px solid #64b5f6;
+}
+
+.science {
+  background-color: #e8f5e9;
+  border: 2px solid #81c784;
+}
+
+.history {
+  background-color: #fff3e0;
+  border: 2px solid #ffb74d;
+}
+
+/* Question View */
+.question-container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.timer {
+  font-size: 1.2rem;
+  color: #e74c3c;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.progress {
+  color: #7f8c8d;
+  margin-bottom: 20px;
+}
+
+.question {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+.answers {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 15px;
+}
+
+.answer {
+  padding: 15px;
+  border: 2px solid #dfe6e9;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.answer:hover:not(.disabled) {
+  background: #f1f2f6;
+  border-color: #b2bec3;
+}
+
+.answer.correct {
+  background: #55efc4;
+  border-color: #00b894;
+  color: white;
+}
+
+.answer.wrong {
+  background: #ff7675;
+  border-color: #d63031;
+  color: white;
+}
+
+.answer.disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Leaderboard */
+.leaderboard-container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.leaderboard-title {
+  color: #2c3e50;
+  margin-top: 0;
+}
+
+.score-text {
+  font-size: 1.2rem;
+  color: #3498db;
+  margin-bottom: 20px;
+}
+
+.leaderboard-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.name-input {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #dfe6e9;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.add-button {
+  padding: 0 25px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-button:hover:not(:disabled) {
+  background: #2980b9;
+}
+
+.add-button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.leaderboard {
+  margin-bottom: 30px;
+}
+
+.leaderboard-header {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.leaderboard-row {
+  display: flex;
+  border-bottom: 1px solid #dfe6e9;
+}
+
+.leaderboard-row.header {
+  background: #3498db;
+  color: white;
+  font-weight: bold;
+}
+
+.leaderboard-cell {
+  padding: 12px;
+  flex: 1;
+}
+
+.leaderboard-cell.rank {
+  flex: 0.5;
+  text-align: center;
+}
+
+.leaderboard-cell.name {
+  flex: 2;
+}
+
+.leaderboard-cell.score {
+  flex: 1;
+  text-align: center;
+}
+
+.leaderboard-cell.action {
+  flex: 0.5;
+  text-align: center;
+}
+
+.delete-button {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.delete-button:hover {
+  background: #c0392b;
+}
+
+/* Restart Button */
+.restart-button {
+  width: 100%;
+  padding: 15px;
+  background: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.restart-button:hover {
+  background: #27ae60;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .section-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .leaderboard-form {
+    flex-direction: column;
+  }
+  
+  .leaderboard-cell {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+}
+
+h1.center{
+  color:#373435;
+  font-family:"Roboto";
+  text-align: center;
+  
+  
+}
+
